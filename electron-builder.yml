@@ -1,5 +1,5 @@
-productName: Chatbox
-appId: xyz.chatboxapp.app
+productName: AIR API
+appId: app.airapi.desktop
 asar: true
 asarUnpack:
   - "**/*.{node,dll}"
@@ -34,14 +34,14 @@ mac:
   entitlementsInherit: assets/entitlements.mac.plist
   gatekeeperAssess: false
 
-dmg:
-  contents:
-    - x: 130
-      y: 220
-    - x: 410
-      y: 220
-      type: link
-      path: /Applications
+  dmg:
+    contents:
+      - x: 130
+        y: 220
+      - x: 410
+        y: 220
+        type: link
+        path: /Applications
 
 win:
   target:
@@ -84,7 +84,7 @@ extraResources:
 
 publish:
   - provider: s3
-    bucket: chatbox
+    bucket: air-api
     endpoint: https://208624959c9d215edea0720162a740c1.r2.cloudflarestorage.com
     path: /releases
     channel: ${env.UPDATE_CHANNEL}
