@@ -1,6 +1,6 @@
 {
-  "name": "xyz.chatboxapp.ce",
-  "productName": "xyz.chatboxapp.ce",
+  "name": "air-api",
+  "productName": "AIR API",
   "version": "0.0.1",
   "engines": {
     "node": ">=22.13.0 <23.0.0",
@@ -48,7 +48,7 @@
     "test:integration": "vitest run test/integration --testTimeout=300000",
     "test:file-conversation": "vitest run test/integration/file-conversation --testTimeout=120000",
     "test:model-provider": "cross-env RUN_MODEL_PROVIDER_TESTS=1 vitest run test/integration/model-provider --testTimeout=120000",
-    "test:claude-prompt-cache-live": "cross-env RUN_MODEL_PROVIDER_TESTS=1 RUN_CLAUDE_PROMPT_CACHE_LIVE=1 vitest run test/integration/model-provider/claude-prompt-cache-live.test.ts --testTimeout=180000",
+    "test:claude-prompt-cache-live": "cross-env RUN_MODEL_PROVIDER_TESTS=1 RUN_CLAUDE_PROMPT_CACHE_LIVE=1 vitest run test/integration/model-provider/claude-prompt-cache-live.test.ts --testTimeout=120000",
     "eval:session-rag": "node scripts/session-rag-eval/run-session-rag-eval.mjs",
     "eval:session-rag:chatbox": "node scripts/session-rag-eval/run-chatbox-flow-eval.mjs",
     "lint": "biome lint .",
@@ -74,12 +74,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chatboxai/chatbox.git"
+    "url": "https://github.com/ramiaznagpro19-tech/AIR-API.git"
   },
   "keywords": [],
   "author": {
-    "name": "bennhuang",
-    "email": "tohuangbin@gmail.com"
+    "name": "AIR API",
+    "email": "support@air-api.local"
   },
   "devDependencies": {
     "@ai-sdk/amazon-bedrock": "^4.0.141",
@@ -167,7 +167,7 @@
     "@types/canvas-confetti": "^1.9.0",
     "@types/d3": "^7.4.3",
     "@types/epub": "^0.0.11",
-    "@types/gtag.js": "^0.0.13",
+    "@types/gtag.js": "^0.7.39",
     "@types/highlight.js": "^10.1.0",
     "@types/katex": "^0.16.2",
     "@types/lodash": "^4.17.24",
@@ -214,7 +214,7 @@
     "css-minimizer-webpack-plugin": "^5.0.0",
     "dayjs": "^1.11.13",
     "deepmerge": "^4.3.1",
-    "detect-port": "^1.5.1",
+    "detect-port": "^5.0.0",
     "diff": "8.0.3",
     "dotenv": "^16.3.1",
     "electron": "^35.7.5",
@@ -239,7 +239,7 @@
     "jotai": "^2.1.0",
     "jotai-immer": "^0.4.1",
     "jotai-optics": "^0.3.0",
-    "js-base64": "^3.7.7",
+    "js-base64": "^1.0.0",
     "js-tiktoken": "^1.0.7",
     "jsdom": "^26.1.0",
     "lint-staged": "^16.1.2",
