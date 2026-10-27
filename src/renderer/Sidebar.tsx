@@ -144,8 +144,8 @@ export default function Sidebar() {
       onClose={() => setShowSidebar(false)}
       onOpen={() => setShowSidebar(true)}
       ModalProps={{
-        keepMounted: true, // Better open performance on mobile.
-        disableEnforceFocus: true, // 关闭 focus trap，避免在侧边栏打开时弹出的 modal 中 input 无法点击
+        keepMounted: true,
+        disableEnforceFocus: true,
         sx: getSidebarModalSx(showSidebar),
       }}
       sx={{
@@ -162,7 +162,7 @@ export default function Sidebar() {
       PaperProps={
         language === 'ar' ? { sx: { direction: 'rtl', overflowY: 'initial' } } : { sx: { overflowY: 'initial' } }
       }
-      disableSwipeToOpen={CHATBOX_BUILD_PLATFORM !== 'ios'} // 只在iOS设备上启用SwipeToOpen
+      disableSwipeToOpen={CHATBOX_BUILD_PLATFORM !== 'ios'}
     >
       <Stack
         data-testid={TestId.sidebar.root}
@@ -183,9 +183,8 @@ export default function Sidebar() {
             >
               <Image src={icon} w={20} h={20} />
               <Text span c="chatbox-secondary" size="xl" lh={1.2} fw="700" truncate>
-                Chatbox
+                AIR API
               </Text>
-              {/* Desktop shows the version in the bottom About link, so only surface it here on mobile */}
               {isSmallScreen && /\d/.test(versionHook.version) && (
                 <Text span c="chatbox-tertiary" size="sm">
                   {versionHook.version}
@@ -376,10 +375,6 @@ export default function Sidebar() {
   )
 }
 
-/**
- * Desktop: shows update banner when an update is downloaded and ready to install.
- * Not shown on mobile (mobile uses dot indicator on About link).
- */
 function SidebarUpdateBanner() {
   const isMobile = CHATBOX_BUILD_TARGET === 'mobile_app'
   if (isMobile) return null
@@ -412,11 +407,6 @@ function SidebarUpdateBannerInner() {
   )
 }
 
-/**
- * About NavLink with update dot indicator.
- * Desktop: shows dot when electron-updater detects update (downloaded/available).
- * Mobile: shows dot when remote API says needCheckUpdate.
- */
 function useShowUpdateDot(versionHook: ReturnType<typeof useVersion>) {
   const updateStatus = useUpdateStore((s) => s.status)
   const isMobile = CHATBOX_BUILD_TARGET === 'mobile_app'
@@ -451,9 +441,6 @@ function AboutNavLink({
   )
 }
 
-/**
- * Small screen About icon with dot indicator for mobile.
- */
 function SmallScreenAboutIcon({
   versionHook,
   navigate,
